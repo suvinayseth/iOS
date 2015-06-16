@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Movie_Quote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,90 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxa-ce-E5q">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Microphone">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V9y-vf-yrh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBB-ly-PjZ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="164" y="373" width="73" height="20.5"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-Ic-FYf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="167" y="496" width="76" height="73"/>
+                                </variation>
+                                <connections>
+                                    <action selector="recordStop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LE2-sw-flZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="vBB-ly-PjZ" firstAttribute="top" secondItem="Mxa-ce-E5q" secondAttribute="bottom" constant="-1" id="0X0-k2-dwW"/>
+                            <constraint firstAttribute="centerX" secondItem="Mxa-ce-E5q" secondAttribute="centerX" id="YHO-61-vMb"/>
+                            <constraint firstItem="Tcn-Ic-FYf" firstAttribute="top" secondItem="Mxa-ce-E5q" secondAttribute="bottom" constant="120" id="bb9-Ka-B3k"/>
+                            <constraint firstAttribute="centerX" secondItem="vBB-ly-PjZ" secondAttribute="centerX" id="c77-fW-Td9"/>
+                            <constraint firstAttribute="centerY" secondItem="Mxa-ce-E5q" secondAttribute="centerY" id="dBR-KB-DEO"/>
+                            <constraint firstAttribute="centerX" secondItem="Tcn-Ic-FYf" secondAttribute="centerX" constant="-5" id="wxM-Jv-zPX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Mxa-ce-E5q"/>
+                                <exclude reference="vBB-ly-PjZ"/>
+                                <exclude reference="Tcn-Ic-FYf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="YHO-61-vMb"/>
+                                <exclude reference="dBR-KB-DEO"/>
+                                <exclude reference="0X0-k2-dwW"/>
+                                <exclude reference="c77-fW-Td9"/>
+                                <exclude reference="bb9-Ka-B3k"/>
+                                <exclude reference="wxM-Jv-zPX"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Mxa-ce-E5q"/>
+                                <include reference="vBB-ly-PjZ"/>
+                                <include reference="Tcn-Ic-FYf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="YHO-61-vMb"/>
+                                <include reference="dBR-KB-DEO"/>
+                                <include reference="0X0-k2-dwW"/>
+                                <include reference="c77-fW-Td9"/>
+                                <include reference="bb9-Ka-B3k"/>
+                                <include reference="wxM-Jv-zPX"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordStop" destination="Tcn-Ic-FYf" id="dmg-on-06f"/>
+                        <outlet property="recordingLabel" destination="vBB-ly-PjZ" id="qKB-oq-Hqu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="454.5" y="261"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Microphone" width="144" height="144"/>
+        <image name="Stop" width="76" height="73"/>
+    </resources>
 </document>
